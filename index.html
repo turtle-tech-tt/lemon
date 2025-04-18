@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="icon" type="image/png" href="lemonlogo.png">
+            <title>The Lemonade Edition</title>
+        <link rel="stylesheet" href="style.css">
+            <style>
+                body {
+                    background-color: black; /* Set background color to black */
+                    margin: 0;
+                    color: yellow; /* Default text color */
+                    font-family: "Comic Sans MS", cursive, sans-serif;
+                }
+    
+                .lemonade {
+                    font-family: "Comic Sans MS", cursive, sans-serif;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center; /* Center horizontally */
+                    position: absolute;
+                    top: 20px; /* Position at the top */
+                    left: 50%; /* Center horizontally */
+                    transform: translateX(-50%); /* Adjust for centering */
+                }
+    
+                .lemonade span {
+                    font-size: 11px;
+                    font-weight: bold;
+                    display: inline-block;
+                    background: linear-gradient(
+                        to left,
+                        #fff700,
+                        #ffeb3b,
+                        #ffd700,
+                        #f1c40f,
+                        #fff700
+                    );
+                    background-size: 400% auto;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: growFast 0.3s ease-out forwards, colorFlowFast 2s linear infinite;
+                    animation-delay: calc(var(--i) * 0.05s), 0.3s;
+                }
+    
+                .space {
+                    width: 25px;
+                }
+    
+                @keyframes growFast {
+                    0% {
+                        font-size: 11px;
+                        transform: scale(0.5);
+                        opacity: 0;
+                    }
+                    100% {
+                        font-size: 70px;
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+    
+                @keyframes colorFlowFast {
+                    0% {
+                        background-position: 100% center;
+                    }
+                    100% {
+                        background-position: 0% center;
+                    }
+                }
+            </style>
+        </head>
+        </head>
+            <!-- Animated Title -->
+            <div class="lemonade">
+                <span style="--i:0">T</span>
+                <span style="--i:1">h</span>
+                <span style="--i:2">e</span>
+    
+                <span class="space"></span>
+    
+                <span style="--i:3">L</span>
+                <span style="--i:4">e</span>
+                <span style="--i:5">m</span>
+                <span style="--i:6">o</span>
+                <span style="--i:7">n</span>
+                <span style="--i:8">a</span>
+                <span style="--i:9">d</span>
+                <span style="--i:10">e</span>
+    
+                <span class="space"></span>
+    
+                <span style="--i:11">E</span>
+                <span style="--i:12">d</span>
+                <span style="--i:13">i</span>
+                <span style="--i:14">t</span>
+                <span style="--i:15">i</span>
+                <span style="--i:16">o</span>
+                <span style="--i:17">n</span>
+            </div>
+        </head>
+    </html>
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemon Menu</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --sidebar-bg: black;
+      --sidebar-text: yellow;
+      --sidebar-line: yellow;
+      --sidebar-icon: yellow;
+      --sidebar-border: yellow;
+
+      --hover-bg: yellow;
+      --hover-text: black;
+      --hover-line: black;
+      --hover-icon: black;
+      --hover-border: yellow;
+
+      --sidebar-width: 260px;
+      --sidebar-radius: 25px;
+      --transition-speed: 0.4s;
+      --font-title: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-title);
+      background: black;
+      color: yellow;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 30px;
+      bottom: 30px;
+      left: 30px;
+      width: var(--sidebar-width);
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      border-radius: var(--sidebar-radius);
+      border: 2px solid var(--sidebar-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 0;
+      transition: all var(--transition-speed) ease-in-out;
+    }
+
+    .sidebar:hover {
+      background-color: var(--hover-bg);
+      color: var(--hover-text);
+      transform: scale(1.03);
+      border-color: var(--hover-border);
+    }
+
+    .sidebar-logo {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .sidebar-logo img {
+      max-width: 80px;
+      max-height: 80px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar:hover .sidebar-logo img {
+      transform: scale(1.1);
+    }
+
+    .sidebar-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--sidebar-line);
+      padding-bottom: 10px;
+    }
+
+    .sidebar:hover .sidebar-title {
+      color: var(--hover-text);
+      border-color: var(--hover-line);
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .nav-link i,
+    .nav-link span {
+      color: var(--sidebar-icon);
+      transition: color var(--transition-speed);
+    }
+
+    .nav-link:hover {
+      transform: scale(1.07);
+      border: 2px solid var(--hover-line);
+      border-radius: 15px;
+    }
+
+    .sidebar:hover .nav-link {
+      color: var(--hover-text);
+    }
+
+    .sidebar:hover .nav-link i,
+    .sidebar:hover .nav-link span {
+      color: var(--hover-icon);
+    }
+
+    .sidebar-footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px 10px;
+      color: var(--sidebar-text);
+      transition: color var(--transition-speed);
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+
+    .sidebar:hover .sidebar-footer {
+      color: var(--hover-text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🍋 SIDEBAR -->
+  <nav class="sidebar">
+
+    <div class="sidebar-logo">
+      <img src="lemonlogo.png" alt="Lemon Logo">
+    </div>
+    <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
+    <ul>
+        <li><a href="index.html" class="nav-link"><i class='bx bxs-home'></i><span>Home</span></a></li>
+        <li><a href="lemons.html" class="nav-link"><i class='bx bxs-invader'></i><span>The Lemons</span></a></li>
+        <li><a href="special.html" class="nav-link"><i class='bx bxs-lemon'></i><span>Special Lemons</span></a></li>
+        <li><a href="about.html" class="nav-link"><i class='bx bxs-info-circle'></i><span>About Lemon</span></a></li>
+        <li><a href="settings.html" class="nav-link"><i class='bx bxs-cog'></i><span>Lemon Settings</span></a></li>
+        <li><a href="login.html" class="nav-link"><i class='bx bx-log-in'></i><span>Login</span></a></li>
+    </ul>
+    <a href="Turtle Tech Lemon Copyright.html"
+       class="sidebar-footer" target="_blank">© Turtle Tech</a>
+  </nav>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lemon+</title>
+  <style>
+    :root {
+      --popup-init-width: 320px;
+      --popup-init-height: 220px;
+      --popup-login-width: 480px;
+      --popup-login-height: 540px;
+      --border-thickness: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: var(--popup-init-width);
+      height: var(--popup-init-height);
+      transform: translate(-50%, -50%) scale(0);
+      background: linear-gradient(45deg, #fff300, #ffe066);
+      border: var(--border-thickness) solid;
+      border-image: linear-gradient(90deg, red, green, blue, red) 1;
+      border-radius: 16px;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      animation: yellowShift 6s infinite alternate ease-in-out,
+                 borderShift 5s infinite linear;
+      transition: width 0.3s ease, height 0.3s ease;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    #popup.show {
+      display: block;
+      animation: popupZoom 0.25s ease-out forwards,
+                 yellowShift 6s infinite alternate ease-in-out,
+                 borderShift 5s infinite linear;
+    }
+
+    #popup h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #222;
+    }
+
+    #popup p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    #popup a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #fff;
+      color: #222;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    #popup a:hover {
+      background-color: #f5c518;
+      color: #000;
+    }
+
+    #iframeWrapper {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    #loginFrame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    @keyframes popupZoom {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes yellowShift {
+      0%   { background: linear-gradient(45deg, #fff300, #ffe066); }
+      50%  { background: linear-gradient(45deg, #fff700, #ffeb99); }
+      100% { background: linear-gradient(45deg, #ffee00, #fff3b0); }
+    }
+
+    @keyframes borderShift {
+      0%   { border-image: linear-gradient(90deg, red, green, blue, red) 1; }
+      25%  { border-image: linear-gradient(90deg, green, blue, red, green) 1; }
+      50%  { border-image: linear-gradient(90deg, blue, red, green, blue) 1; }
+      75%  { border-image: linear-gradient(90deg, red, green, blue, red) 1; }
+      100% { border-image: linear-gradient(90deg, green, blue, red, green) 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Popup -->
+<div id="popup">
+  <button class="close-btn" id="closeBtn">&times;</button>
+  <div id="content">
+    <h2>Lemon+</h2>
+    <p>Login or Sign up! IT'S FREE!</p>
+    <a id="loginBtn">Go to Login</a>
+  </div>
+  <div id="iframeWrapper">
+    <iframe id="loginFrame" src=""></iframe>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById('popup')
+  const loginBtn = document.getElementById('loginBtn')
+  const content = document.getElementById('content')
+  const iframeWrapper = document.getElementById('iframeWrapper')
+  const iframe = document.getElementById('loginFrame')
+  const closeBtn = document.getElementById('closeBtn')
+
+  const showPopup = () => popup.classList.add('show')
+
+  const hidePopup = () => {
+    popup.classList.remove('show')
+    content.style.display = 'block'
+    iframeWrapper.style.display = 'none'
+    iframe.src = ''
+    popup.style.width = 'var(--popup-init-width)'
+    popup.style.height = 'var(--popup-init-height)'
+  }
+
+  loginBtn.addEventListener('click', () => {
+    content.style.display = 'none'
+    iframeWrapper.style.display = 'block'
+    iframe.src = 'https://www.authpro.com/auth/ElimayLmn/'
+    popup.style.width = 'var(--popup-login-width)'
+    popup.style.height = 'var(--popup-login-height)'
+  })
+
+  closeBtn.addEventListener('click', hidePopup)
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(showPopup, 1000)
+  })
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
