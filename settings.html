@@ -1,6 +1,137 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="icon" type="image/png" href="lemonlogo.png">
+            <title>The Lemonade Edition</title>
+            <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Custom Cursor</title>
+            <style>
+                /* Custom Cursor */
+                .custom-cursor {
+                    position: fixed;
+                    width: 10px;
+                    height: 10px;
+                    background-color: white;
+                    border-radius: 50%;
+                    border: 3px solid red; /* Initial color */
+                    pointer-events: none;
+                    transition: transform 0.1s linear;
+                    box-shadow: 0 0 10px red;
+                    z-index: 9999; /* Makes sure it's always on top */
+                }
+        
+                body {
+                    margin: 0;
+                    height: 100vh;
+                    background-color: black;
+                    color: white;
+                    font-family: Arial, sans-serif;
+                    overflow: hidden;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Custom Cursor -->
+            <div class="custom-cursor" id="cursor"></div>
+        
+            <script>
+                // Custom Cursor Logic
+                const cursor = document.getElementById("cursor");
+        
+                // Update cursor position on mouse move
+                document.addEventListener("mousemove", (e) => {
+                    cursor.style.left = `${e.clientX}px`;
+                    cursor.style.top = `${e.clientY}px`;
+                });
+        
+                // RGB Border Animation
+                let hue = 0;
+                setInterval(() => {
+                    hue = (hue + 1) % 360; // Cycle through 360 degrees of color
+                    cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
+                    cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
+                }, 30);
+            </script>
+        </body>
+        </html>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <style>
             body {
                 background-color: black; /* Set background color to black */
@@ -99,174 +230,493 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Lemon Menu</title>
+          <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+          <style>
+            :root {
+              --sidebar-bg: black;
+              --sidebar-text: yellow;
+              --sidebar-line: yellow;
+              --sidebar-icon: yellow;
+              --sidebar-border: yellow;
+        
+              --hover-bg: yellow;
+              --hover-text: black;
+              --hover-line: black;
+              --hover-icon: black;
+              --hover-border: yellow;
+        
+              --sidebar-width: 260px;
+              --sidebar-radius: 25px;
+              --transition-speed: 0.4s;
+              --font-title: 'Comic Sans MS', cursive, sans-serif;
+            }
+        
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+        
+            body {
+              font-family: var(--font-title);
+              background: black;
+              color: yellow;
+            }
+        
+            .sidebar {
+              position: fixed;
+              top: 30px;
+              bottom: 30px;
+              left: 30px;
+              width: var(--sidebar-width);
+              background-color: var(--sidebar-bg);
+              color: var(--sidebar-text);
+              border-radius: var(--sidebar-radius);
+              border: 2px solid var(--sidebar-border);
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 20px 0;
+              transition: all var(--transition-speed) ease-in-out;
+            }
+        
+            .sidebar:hover {
+              background-color: var(--hover-bg);
+              color: var(--hover-text);
+              transform: scale(1.03);
+              border-color: var(--hover-border);
+            }
+        
+            .sidebar-logo {
+              text-align: center;
+              padding-bottom: 10px; /* spazio originale */
+            }
+        
+            .sidebar-logo img {
+              max-width: 100%;
+              max-height: 110px; /* aumentato da 80px, ma ancora dentro il contenitore */
+              border-radius: 12px;
+              transition: transform 0.3s ease;
+              object-fit: contain; /* mantiene proporzioni */
+            }
+        
+            .sidebar:hover .sidebar-logo img {
+              transform: scale(1.1);
+            }
+        
+            .sidebar-title {
+              text-align: center;
+              font-size: 1.5rem;
+              font-weight: bold;
+              margin-bottom: 20px;
+              border-bottom: 2px solid var(--sidebar-line);
+              padding-bottom: 10px;
+            }
+        
+            .sidebar:hover .sidebar-title {
+              color: var(--hover-text);
+              border-color: var(--hover-line);
+            }
+        
+            .sidebar ul {
+              list-style: none;
+              padding: 0 20px;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+        
+            .nav-link {
+              display: inline-flex;
+              align-items: center;
+              gap: 12px;
+              padding: 12px 14px;
+              color: var(--sidebar-text);
+              text-decoration: none;
+              border: 2px solid transparent;
+              border-radius: 12px;
+              font-size: 1rem;
+              transition: all 0.25s ease-in-out;
+            }
+        
+            .nav-link i,
+            .nav-link span {
+              color: var(--sidebar-icon);
+              transition: color var(--transition-speed);
+            }
+        
+            .nav-link:hover {
+              transform: scale(1.07);
+              border: 2px solid var(--hover-line);
+              border-radius: 15px;
+            }
+        
+            .sidebar:hover .nav-link {
+              color: var(--hover-text);
+            }
+        
+            .sidebar:hover .nav-link i,
+            .sidebar:hover .nav-link span {
+              color: var(--hover-icon);
+            }
+        
+            .sidebar-footer {
+              text-align: center;
+              font-size: 0.9rem;
+              padding: 20px 10px;
+              color: var(--sidebar-text);
+              transition: color var(--transition-speed);
+              text-decoration: none;
+              display: block;
+              cursor: pointer;
+            }
+        
+            .sidebar:hover .sidebar-footer {
+              color: var(--hover-text);
+            }
+          </style>
+        </head>
+        <body>
+        
+          <!-- 🍋 SIDEBAR -->
+          <nav class="sidebar">
+        
+            <div class="sidebar-logo">
+              <img src="lemonlogo.png" alt="Lemon Logo">
+            </div>
+            <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
+            <ul>
+                <li><a href="index.html" class="nav-link"><i class='bx bxs-home'></i><span>Home</span></a></li>
+                <li><a href="lemons.html" class="nav-link"><i class='bx bxs-invader'></i><span>The Lemons</span></a></li>
+                <li><a href="special.html" class="nav-link"><i class='bx bxs-lemon'></i><span>Special Lemons</span></a></li>
+                <li><a href="about.html" class="nav-link"><i class='bx bxs-info-circle'></i><span>About Lemon</span></a></li>
+                <li><a href="settings.html" class="nav-link"><i class='bx bxs-cog'></i><span>Lemon Settings</span></a></li>
+                <li><a href="login.html" class="nav-link"><i class='bx bx-log-in'></i><span>Login</span></a></li>
+            </ul>
+            <a href="ttcopyrights.html"
+               class="sidebar-footer" target="_blank">© Turtle Tech</a>
+          </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!DOCTYPE html>
+          <html lang="it">
+          <head>
+            <meta charset="UTF-8" />
+            <title>Sfondo Animato con Linee e Pallini Gialli</title>
+            <style>
+              html, body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                height: 100%;
+              }
+          
+              canvas#sfondo {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                pointer-events: none;
+              }
+            </style>
+          </head>
+          <body>
+          
+            <canvas id="sfondo"></canvas>
+          
+            <script>
+              const canvas = document.getElementById('sfondo');
+              const ctx = canvas.getContext('2d');
+          
+              let width, height;
+              let particelle = [];
+              const numParticelle = 100;
+              const distanzaMax = 120;
+          
+              function ridimensiona() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+              }
+          
+              window.addEventListener('resize', ridimensiona);
+              ridimensiona();
+          
+              class Particella {
+                constructor() {
+                  this.x = Math.random() * width;
+                  this.y = Math.random() * height;
+                  this.vx = (Math.random() - 0.5) * 1;
+                  this.vy = (Math.random() - 0.5) * 1;
+                  this.r = 2;
+                  this.colore = Math.random() < 0.25 ? '#ffd700' : '#ffffff'; 
+                }
+          
+                aggiorna() {
+                  this.x += this.vx;
+                  this.y += this.vy;
+          
+                  if (this.x < 0 || this.x > width) this.vx *= -1;
+                  if (this.y < 0 || this.y > height) this.vy *= -1;
+                }
+          
+                disegna() {
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                  ctx.fillStyle = this.colore;
+                  ctx.fill();
+                }
+              }
+          
+              function creaParticelle() {
+                particelle = [];
+                for (let i = 0; i < numParticelle; i++) {
+                  particelle.push(new Particella());
+                }
+              }
+          
+              function disegnaLinee() {
+                for (let i = 0; i < particelle.length; i++) {
+                  for (let j = i + 1; j < particelle.length; j++) {
+                    const dx = particelle[i].x - particelle[j].x;
+                    const dy = particelle[i].y - particelle[j].y;
+                    const distanza = Math.sqrt(dx * dx + dy * dy);
+          
+                    if (distanza < distanzaMax) {
+                      ctx.beginPath();
+                      ctx.moveTo(particelle[i].x, particelle[i].y);
+                      ctx.lineTo(particelle[j].x, particelle[j].y);
+                      ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distanza / distanzaMax})`;
+                      ctx.lineWidth = 1;
+                      ctx.stroke();
+                    }
+                  }
+                }
+              }
+          
+              function anima() {
+                ctx.clearRect(0, 0, width, height);
+                particelle.forEach(p => {
+                  p.aggiorna();
+                  p.disegna();
+                });
+                disegnaLinee();
+                requestAnimationFrame(anima);
+              }
+          
+              creaParticelle();
+              anima();
+            </script>
+          </body>
+          </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    .donate-button:hover img {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+    }
+  
+    .donate-button img {
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+  
+  <div class="donate-button" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <a href="https://www.buymeacoffee.com/turtle.tech">
+      <img src="https://img.buymeacoffee.com/button-api/?text=Donate to Turtle Tech&emoji=🐢&slug=turtle.tech&button_colour=40DCA5&font_colour=ffffff&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00" />
+    </a>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="turtle.tech" data-description="Support me on Buy me a coffee!" data-message="Please Donate! <3" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lemon Menu</title>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>Panic Key System</title>
   <style>
-    :root {
-      --sidebar-bg: black;
-      --sidebar-text: yellow;
-      --sidebar-line: yellow;
-      --sidebar-icon: yellow;
-      --sidebar-border: yellow;
-
-      --hover-bg: yellow;
-      --hover-text: black;
-      --hover-line: black;
-      --hover-icon: black;
-      --hover-border: yellow;
-
-      --sidebar-width: 260px;
-      --sidebar-radius: 25px;
-      --transition-speed: 0.4s;
-      --font-title: 'Comic Sans MS', cursive, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: var(--font-title);
-      background: black;
-      color: yellow;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 30px;
-      bottom: 30px;
-      left: 30px;
-      width: var(--sidebar-width);
-      background-color: var(--sidebar-bg);
-      color: var(--sidebar-text);
-      border-radius: var(--sidebar-radius);
-      border: 2px solid var(--sidebar-border);
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px 0;
-      transition: all var(--transition-speed) ease-in-out;
-    }
-
-    .sidebar:hover {
-      background-color: var(--hover-bg);
-      color: var(--hover-text);
-      transform: scale(1.03);
-      border-color: var(--hover-border);
-    }
-
-    .sidebar-logo {
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    .sidebar-logo img {
-      max-width: 80px;
-      max-height: 80px;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar:hover .sidebar-logo img {
-      transform: scale(1.1);
-    }
-
-    .sidebar-title {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--sidebar-line);
-      padding-bottom: 10px;
-    }
-
-    .sidebar:hover .sidebar-title {
-      color: var(--hover-text);
-      border-color: var(--hover-line);
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .nav-link {
-      display: inline-flex;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      color: var(--sidebar-text);
-      text-decoration: none;
-      border: 2px solid transparent;
-      border-radius: 12px;
-      font-size: 1rem;
-      transition: all 0.25s ease-in-out;
+      height: 100vh;
+      margin: 0;
     }
 
-    .nav-link i,
-    .nav-link span {
-      color: var(--sidebar-icon);
-      transition: color var(--transition-speed);
-    }
-
-    .nav-link:hover {
-      transform: scale(1.07);
-      border: 2px solid var(--hover-line);
-      border-radius: 15px;
-    }
-
-    .sidebar:hover .nav-link {
-      color: var(--hover-text);
-    }
-
-    .sidebar:hover .nav-link i,
-    .sidebar:hover .nav-link span {
-      color: var(--hover-icon);
-    }
-
-    .sidebar-footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 20px 10px;
-      color: var(--sidebar-text);
-      transition: color var(--transition-speed);
-      text-decoration: none;
-      display: block;
+    #setPanicKeyBtn {
+      background-color: black;
+      border: 2px solid yellow;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 8px;
     }
 
-    .sidebar:hover .sidebar-footer {
-      color: var(--hover-text);
+    #setPanicKeyBtn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px yellow;
     }
   </style>
 </head>
 <body>
 
-  <!-- 🍋 SIDEBAR -->
-  <nav class="sidebar">
+  <button id="setPanicKeyBtn">Set Panic Key</button>
 
-    <div class="sidebar-logo">
-      <img src="lemonlogo.png" alt="Lemon Logo">
-    </div>
-    <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
-    <ul>
-        <li><a href="index.html" class="nav-link"><i class='bx bxs-home'></i><span>Home</span></a></li>
-        <li><a href="lemons.html" class="nav-link"><i class='bx bxs-invader'></i><span>The Lemons</span></a></li>
-        <li><a href="special.html" class="nav-link"><i class='bx bxs-lemon'></i><span>Special Lemons</span></a></li>
-        <li><a href="about.html" class="nav-link"><i class='bx bxs-info-circle'></i><span>About Lemon</span></a></li>
-        <li><a href="settings.html" class="nav-link"><i class='bx bxs-cog'></i><span>Lemon Settings</span></a></li>
-        <li><a href="login.html" class="nav-link"><i class='bx bx-log-in'></i><span>Login</span></a></li>
-    </ul>
-    <a href="Turtle Tech Lemon Copyright.html"
-       class="sidebar-footer" target="_blank">© Turtle Tech</a>
-  </nav>
+  <script>
+    let panicKey = "[";
+    let panicActive = false;
+
+    const setPanicKeyBtn = document.getElementById("setPanicKeyBtn");
+
+    setPanicKeyBtn.addEventListener("click", () => {
+      panicActive = true;
+      alert(`Panic key is now set to "${panicKey}".\nPress "${panicKey}" at any time to immediately redirect to Google.com.\nTo change the panic key, click "Set Panic Key" again.`);
+      
+      const newKey = prompt("Enter a new panic key (just one character):", panicKey);
+      if (newKey && newKey.length === 1) {
+        panicKey = newKey;
+        alert(`Panic key updated to "${panicKey}".`);
+      } else if (newKey !== null) {
+        alert("Invalid key. Panic key was not changed.");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (panicActive && event.key === panicKey) {
+        window.location.href = "https://www.google.com";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

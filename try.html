@@ -1,0 +1,11 @@
+<a href="#" onclick="resetPrivacyConsent()">Reset Consenso Privacy</a>
+
+<script>
+  function resetPrivacyConsent() {
+    // Rimuovi il consenso dalla memoria del browser
+    localStorage.removeItem('privacyAccettata');
+    
+    // Ricarica la pagina per forzare il reindirizzamento alla privacy
+    window.location.reload();
+  }
+</script>
