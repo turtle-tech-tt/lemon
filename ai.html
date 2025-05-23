@@ -232,7 +232,7 @@
             pointer-events: none;
             transition: transform 0.1s linear;
             box-shadow: 0 0 10px red;
-            z-index: 9999; /* Makes sure it's always on top */
+            z-index: 10000;
         }
 
         body {
@@ -242,6 +242,7 @@
             color: white;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            cursor: none; /* Nasconde il cursore di sistema */
         }
     </style>
 </head>
@@ -253,7 +254,6 @@
         // Custom Cursor Logic
         const cursor = document.getElementById("cursor");
 
-        // Update cursor position on mouse move
         document.addEventListener("mousemove", (e) => {
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
@@ -262,13 +262,14 @@
         // RGB Border Animation
         let hue = 0;
         setInterval(() => {
-            hue = (hue + 1) % 360; // Cycle through 360 degrees of color
+            hue = (hue + 1) % 360;
             cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
             cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
         }, 30);
     </script>
 </body>
 </html>
+
 
 
 
@@ -453,7 +454,10 @@
   <nav class="sidebar">
 
     <div class="sidebar-logo">
-      <img src="lemonlogo.png" alt="Lemon Logo">
+      <a href="index.html">
+        <img src="lemonlogo.png" alt="Lemon Logo">
+      </a>
+      
     </div>
     <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
     <ul>
@@ -553,7 +557,7 @@
   <html lang="en"><head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico"> 
-    <title>AI</title>
+    <title>Turtle AI</title>
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -735,11 +739,11 @@
     <div id="chat-wrapper">
         <div id="chat-container">
             <div class="message ai">
-                <p>What can I help you with?</p>
+                <p>What can i be usefull for?</p>
             </div>
         </div>
         <div id="input-container">
-            <textarea id="user-input" placeholder="Message Gemini AI..."></textarea>
+            <textarea id="user-input" placeholder="Message Turtle AI"></textarea>
             <button id="send-button">Send</button>
         </div>
     </div>
@@ -747,7 +751,7 @@
         const chatContainer = document.getElementById('chat-container');
         const userInput = document.getElementById('user-input');
         const sendButton = document.getElementById('send-button');
-        const apiKey = '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';
+        const apiKey = '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';
 
         async function sendMessage() {
             const userMessage = userInput.value.trim();
@@ -829,3 +833,24 @@
 
 </body></html>
 <copyright>© Turtle Tech</copyright>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

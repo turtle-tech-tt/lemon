@@ -24,6 +24,64 @@
 
 
 
+              <style>
+                ::-webkit-scrollbar {
+                background-color: transparent;
+                width: 10px;
+                }
+                ::-webkit-scrollbar-thumb {
+                background: linear-gradient(#ff5e55, #49ff88);
+                border-radius: 100px;
+                }
+      </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+
+
+
 
 
 
@@ -40,60 +98,60 @@
 
 
               <!DOCTYPE html>
-              <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Custom Cursor</title>
-                  <style>
-                      /* Custom Cursor */
-                      .custom-cursor {
-                          position: fixed;
-                          width: 10px;
-                          height: 10px;
-                          background-color: white;
-                          border-radius: 50%;
-                          border: 3px solid red; /* Initial color */
-                          pointer-events: none;
-                          transition: transform 0.1s linear;
-                          box-shadow: 0 0 10px red;
-                          z-index: 9999; /* Makes sure it's always on top */
-                      }
-              
-                      body {
-                          margin: 0;
-                          height: 100vh;
-                          background-color: black;
-                          color: white;
-                          font-family: Arial, sans-serif;
-                          overflow: hidden;
-                      }
-                  </style>
-              </head>
-              <body>
-                  <!-- Custom Cursor -->
-                  <div class="custom-cursor" id="cursor"></div>
-              
-                  <script>
-                      // Custom Cursor Logic
-                      const cursor = document.getElementById("cursor");
-              
-                      // Update cursor position on mouse move
-                      document.addEventListener("mousemove", (e) => {
-                          cursor.style.left = `${e.clientX}px`;
-                          cursor.style.top = `${e.clientY}px`;
-                      });
-              
-                      // RGB Border Animation
-                      let hue = 0;
-                      setInterval(() => {
-                          hue = (hue + 1) % 360; // Cycle through 360 degrees of color
-                          cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
-                          cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
-                      }, 30);
-                  </script>
-              </body>
-              </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cursor</title>
+    <style>
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            border: 3px solid red; /* Initial color */
+            pointer-events: none;
+            transition: transform 0.1s linear;
+            box-shadow: 0 0 10px red;
+            z-index: 10000;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            cursor: none; /* Nasconde il cursore di sistema */
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById("cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // RGB Border Animation
+        let hue = 0;
+        setInterval(() => {
+            hue = (hue + 1) % 360;
+            cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
+            cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
+        }, 30);
+    </script>
+</body>
+</html>
               
               
               
@@ -526,7 +584,10 @@
       <nav class="sidebar">
     
         <div class="sidebar-logo">
-          <img src="lemonlogo.png" alt="Lemon Logo">
+          <a href="index.html">
+            <img src="lemonlogo.png" alt="Lemon Logo">
+          </a>
+          
         </div>
         <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
         <ul>
@@ -560,74 +621,198 @@
 
 
  
-  <!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body {
-            display: flex; justify-content: center; align-items: center; height: 100vh;
-            background: linear-gradient(135deg, rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3));
-            backdrop-filter: blur(10px);
-        }
-        .container {
-            width: 350px; padding: 20px; background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        h2 { margin-bottom: 15px; color: rgb(0, 0, 0); }
-        input, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; outline: none; }
-        button { cursor: pointer; font-size: 16px; }
-        #enterAccountBtn { background-color: #28a745; color: white; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turtle Login</title>
+  <style>
+    /* Rimosso il centraggio verticale e altezza 100% per eliminare spazio inutile */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #000, #001a00);
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+    }
+    /* Centriamo orizzontalmente e lasciamo in alto sul viewport */
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .menu {
+      background: rgba(0,0,0,0.85);
+      border: 2px solid var(--bg-green);
+      border-radius: 30px;
+      width: 320px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px rgba(0,179,0,0.5);
+      position: relative;
+    }
+    :root { --bg-green: #00b300; --transition: 0.3s ease; }
+    .menu h2 { text-align: center; margin-bottom: 1rem; font-size: 1.25rem; }
+    .menu input {
+      width: 100%; padding: 0.5rem; margin-bottom: 0.75rem;
+      border: none; border-radius: 30px; background: #111;
+      outline: none; transition: box-shadow var(--transition);
+      color: inherit;
+    }
+    .menu input:focus { box-shadow: 0 0 8px var(--bg-green); }
+    .buttons { display: flex; justify-content: space-between; }
+    .buttons button {
+      flex: 1; margin: 0 0.25rem; padding: 0.5rem;
+      border: 2px solid var(--bg-green); background: transparent;
+      border-radius: 30px; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      color: inherit;
+    }
+    .buttons button:hover { background: var(--bg-green); color: #000; transform: scale(1.05); }
+    .signup-panel, .admin-panel {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.9);
+      border: 2px solid var(--bg-green);
+      border-radius: 30px; width: 300px; padding: 1.5rem;
+      box-shadow: 0 0 15px rgba(0,179,0,0.5);
+      opacity: 0; visibility: hidden;
+      transition: opacity var(--transition);
+      max-height: 400px; overflow-y: auto;
+    }
+    .signup-panel.active, .admin-panel.active {
+      opacity: 1; visibility: visible;
+    }
+    .signup-panel h3, .admin-panel h3 { text-align: center; margin-bottom: 0.75rem; }
+    .signup-panel .close-btn, .admin-panel .close-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: transparent; border: none;
+      font-size: 1.2rem; color: #f0f0f0; cursor: pointer;
+    }
+    .admin-list { list-style: none; padding: 0; margin: 0; }
+    .admin-list li {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .admin-list li:last-child { border-bottom: none; }
+    .admin-list button {
+      padding: 0.25rem 0.5rem; border: 1px solid red;
+      background: transparent; color: red; border-radius: 30px;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .admin-list button:hover { background: red; color: #000; }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <h2 class="logname">Enter Account</h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button id="enterAccountBtn">Enter Account</button>
+  <div class="menu-container">
+    <div class="menu" id="loginMenu">
+      <h2>Turtle Login</h2>
+      <input type="text" id="loginUser" placeholder="Username">
+      <input type="password" id="loginPass" placeholder="Password">
+      <input type="text" id="ttaCode" placeholder="TTA Code">
+      <div class="buttons">
+        <button id="loginBtn">Login</button>
+        <button id="signupBtn">Sign Up</button>
+      </div>
+      <!-- Sign-up panel -->
+      <div class="signup-panel" id="signupPanel">
+        <button class="close-btn" id="closeSignup">&times;</button>
+        <h3>Turtle Sign Up</h3>
+        <input type="text" id="newUser" placeholder="Username">
+        <input type="password" id="newPass" placeholder="Password">
+        <div class="buttons" style="margin-top:0.5rem;">
+          <button id="saveBtn">Save</button>
+          <button id="cancelBtn">Cancel</button>
+        </div>
+      </div>
+      <!-- Admin panel -->
+      <div class="admin-panel" id="adminPanel">
+        <button class="close-btn" id="closeAdmin">&times;</button>
+        <h3>All Accounts</h3>
+        <ul class="admin-list" id="adminList"></ul>
+      </div>
     </div>
+  </div>
 
-    <script>
-        const usernameInput = document.getElementById("username");
-        const passwordInput = document.getElementById("password");
-        const enterAccountBtn = document.getElementById("enterAccountBtn");
+  <script>
+    const signupBtn = document.getElementById('signupBtn');
+    const signupPanel = document.getElementById('signupPanel');
+    const closeSignup = document.getElementById('closeSignup');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const loginBtn = document.getElementById('loginBtn');
+    const ttaCodeInput = document.getElementById('ttaCode');
+    const adminPanel = document.getElementById('adminPanel');
+    const closeAdmin = document.getElementById('closeAdmin');
+    const adminList = document.getElementById('adminList');
 
-        enterAccountBtn.addEventListener("click", () => {
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value.trim();
+    let users = JSON.parse(localStorage.getItem('turtleUsers') || '[]');
 
-            if (!username || !password) {
-                alert("Please enter a valid username and password!");
-                return;
-            }
+    signupBtn.addEventListener('click', () => signupPanel.classList.add('active'));
+    closeSignup.addEventListener('click', () => signupPanel.classList.remove('active'));
+    cancelBtn.addEventListener('click', () => signupPanel.classList.remove('active'));
 
-            let users = JSON.parse(localStorage.getItem("users")) || {};
+    saveBtn.addEventListener('click', () => {
+      const u = document.getElementById('newUser').value.trim();
+      const p = document.getElementById('newPass').value;
+      if (!u || !p) { alert('Enter both fields'); return; }
+      if (users.find(x => x.username === u)) { alert('Username already exists'); return; }
+      users.push({ username: u, password: p });
+      localStorage.setItem('turtleUsers', JSON.stringify(users));
+      alert('Account created');
+      document.getElementById('newUser').value = '';
+      document.getElementById('newPass').value = '';
+      signupPanel.classList.remove('active');
+    });
 
-            if (users[username]) {
-                // Se l'account esiste, controlla la password
-                if (users[username] === password) {
-                    alert("Login Successful! Redirecting...");
-                    window.open("https://sites.google.com/student.msdlt.org/members/home-page", "_blank");
-                } else {
-                    alert("Incorrect Password! Try again.");
-                }
-            } else {
-                // Se l'account non esiste, lo crea
-                users[username] = password;
-                localStorage.setItem("users", JSON.stringify(users));
-                alert("Account Created & Logged In! Redirecting...");
-                window.open("https://sites.google.com/student.msdlt.org/members/home-page", "_blank");
-            }
-        });
-    </script>
+    closeAdmin.addEventListener('click', () => adminPanel.classList.remove('active'));
 
+    loginBtn.addEventListener('click', () => {
+      const u = document.getElementById('loginUser').value.trim();
+      const p = document.getElementById('loginPass').value;
+      const code = ttaCodeInput.value.trim();
+      if (code === 'tta-3-21-12') {
+        renderAdminList();
+        adminPanel.classList.add('active');
+        return;
+      }
+      const valid = users.find(x => x.username === u && x.password === p);
+      if (valid) {
+        window.location.href = 'lemon+members.html';
+      } else {
+        alert('Invalid credentials');
+      }
+    });
+
+    function renderAdminList() {
+      adminList.innerHTML = '';
+      users.forEach((user, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${user.username} (${user.password})`;
+        const banBtn = document.createElement('button');
+        banBtn.textContent = 'Ban';
+        banBtn.addEventListener('click', () => banUser(index));
+        li.appendChild(banBtn);
+        adminList.appendChild(li);
+      });
+    }
+
+    function banUser(index) {
+      if (confirm(`Ban user ${users[index].username}?`)) {
+        users.splice(index, 1);
+        localStorage.setItem('turtleUsers', JSON.stringify(users));
+        renderAdminList();
+      }
+    }
+  </script>
 </body>
 </html>
+
+
 
 
 

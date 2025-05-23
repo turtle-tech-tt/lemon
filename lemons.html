@@ -22,6 +22,73 @@
 
 
 
+              <style>
+                ::-webkit-scrollbar {
+                background-color: transparent;
+                width: 10px;
+                }
+                ::-webkit-scrollbar-thumb {
+                background: linear-gradient(#ff5e55, #49ff88);
+                border-radius: 100px;
+                }
+      </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+              
+
+
+
+              
+
+
 
 
 
@@ -330,7 +397,10 @@
       <nav class="sidebar">
     
         <div class="sidebar-logo">
-          <img src="lemonlogo.png" alt="Lemon Logo">
+          <a href="index.html">
+            <img src="lemonlogo.png" alt="Lemon Logo">
+          </a>
+          
         </div>
         <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
         <ul>
@@ -358,6 +428,10 @@
 
 
 
+<h1>Games not avaible until this message disappears
+  <br>
+  <center>(estimated date is 8/2025)</center>
+</h1>
 
 
 
@@ -374,8 +448,7 @@
 
 
 
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
@@ -399,189 +472,189 @@
       }
 
       .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 colonne */
-        gap: 16px; /* spazio tra righe e colonne */
-        max-width: 960px;
-      }
+      display: grid;
+      grid-template-columns: repeat(3, 200px);
+      justify-content: center; /* CENTRA le colonne dentro la griglia */
+      gap: 16px;
+      max-width: 100%; /* oppure un valore alto */
+}
+
 
       .image-container {
+        position: relative; /* importante per posizionare la scritta */
         overflow: hidden;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        width: 100%;
+        width: 90%; /* leggermente più piccole */
+        margin: 0 auto; /* centra l'immagine nel container */
+        cursor: pointer;
       }
 
       .image-container img {
         width: 100%;
         height: auto;
         display: block;
-        transition: transform 0.3s ease;
+        transition: filter 0.3s ease, transform 0.3s ease;
       }
 
+      /* Effetto al passaggio del mouse */
       .image-container:hover img {
+        filter: blur(4px);
         transform: scale(1.05);
+      }
+
+      /* Scritta nascosta di default */
+      .image-container .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Scritta visibile al passaggio del mouse */
+      .image-container:hover .overlay-text {
+        opacity: 1;
+        pointer-events: auto;
       }
     </style>
   </head>
   <body>
     <div class="gallery">
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
+          <img src="https://pbs.twimg.com/profile_images/1219353297129295874/HDIEpfJr_400x400.jpg" alt="img1" />
+          <div class="overlay-text">1v1.lol</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
+        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
           <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
+          <div class="overlay-text">Testo sulla foto</div>
         </a>
       </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-      <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank">
-          <img src="https://www.albertobregani.com/wp-content/uploads/2019/05/sdqh8051_bdm_ritratto_bn_nocorn-840x840.jpg" alt="img1" />
-        </a>
-      </div>
-                                                                                                                                                                                    
-                                                      
-    </div>
-  </body>
-</html>
+      
 
 
 

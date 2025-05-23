@@ -20,12 +20,290 @@
         <script src="script.js"></script>
         <script src="panic-key.js"></script>
           <script src="/path/to/panic-key.js"></script>
-            
-            
-            
-          <script>
-            alert("Welcome To The Lemonade Editon!");
-          </script>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+          
+          <body>
+
+
+            <div class="container" id="custom-loader"></div>
+            <script>
+              window.addEventListener('load', () => {
+                const loader = document.getElementById('custom-loader');
+                if (loader) {
+                  loader.style.display = 'none';
+                }
+              });
+            </script>
+          
+        
+        
+          </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          
+          <style>
+            .container {
+              --uib-size: 60px;
+              --uib-color: black;
+              --uib-speed: 1.5s;
+              --uib-dot-size: calc(var(--uib-size) * 0.1);
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              height: calc(var(--uib-size) * 0.64);
+              width: calc(var(--uib-size) * 0.64);
+            }
+          
+            @keyframes jump {
+              0%,
+              100% {
+                transform: translateY(120%);
+              }
+          
+              50% {
+                transform: translateY(-120%);
+              }
+            }
+          
+            .dot {
+              --uib-d1: -0.48;
+              --uib-d2: -0.4;
+              --uib-d3: -0.32;
+              --uib-d4: -0.24;
+              --uib-d5: -0.16;
+              --uib-d6: -0.08;
+              --uib-d7: -0;
+              position: absolute;
+              bottom: calc(var(--uib-bottom) + var(--uib-dot-size) / 2);
+              right: calc(var(--uib-right) + var(--uib-dot-size) / 2);
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              height: var(--uib-dot-size);
+              width: var(--uib-dot-size);
+              animation: jump var(--uib-speed) ease-in-out infinite;
+              opacity: var(--uib-scale);
+              will-change: transform;
+              backface-visibility: hidden;
+            }
+          
+            .dot::before {
+              content: '';
+              height: 100%;
+              width: 100%;
+              background-color: var(--uib-color);
+              border-radius: 50%;
+              transform: scale(var(--uib-scale));
+              transition: background-color 0.3s ease;
+            }
+          
+            .dot:nth-child(1) {
+              --uib-bottom: 24%;
+              --uib-right: -35%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d1));
+            }
+            .dot:nth-child(2) {
+              --uib-bottom: 16%;
+              --uib-right: -6%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d2));
+            }
+            .dot:nth-child(3) {
+              --uib-bottom: 8%;
+              --uib-right: 23%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d3));
+            }
+            .dot:nth-child(4) {
+              --uib-bottom: -1%;
+              --uib-right: 51%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d4));
+            }
+            .dot:nth-child(5) {
+              --uib-bottom: 38%;
+              --uib-right: -17.5%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d2));
+            }
+            .dot:nth-child(6) {
+              --uib-bottom: 30%;
+              --uib-right: 10%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d3));
+            }
+            .dot:nth-child(7) {
+              --uib-bottom: 22%;
+              --uib-right: 39%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d4));
+            }
+            .dot:nth-child(8) {
+              --uib-bottom: 14%;
+              --uib-right: 67%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d5));
+            }
+            .dot:nth-child(9) {
+              --uib-bottom: 53%;
+              --uib-right: -0.8%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d3));
+            }
+            .dot:nth-child(10) {
+              --uib-bottom: 44.5%;
+              --uib-right: 27%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d4));
+            }
+            .dot:nth-child(11) {
+              --uib-bottom: 36%;
+              --uib-right: 55.7%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d5));
+            }
+            .dot:nth-child(12) {
+              --uib-bottom: 28.7%;
+              --uib-right: 84.3%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d6));
+            }
+            .dot:nth-child(13) {
+              --uib-bottom: 66.8%;
+              --uib-right: 15%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d4));
+            }
+            .dot:nth-child(14) {
+              --uib-bottom: 58.8%;
+              --uib-right: 43%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d5));
+            }
+            .dot:nth-child(15) {
+              --uib-bottom: 50%;
+              --uib-right: 72%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d6));
+            }
+            .dot:nth-child(16) {
+              --uib-bottom: 42%;
+              --uib-right: 100%;
+              animation-delay: calc(var(--uib-speed) * var(--uib-d7));
+            }
+          
+            .dot:nth-child(3) {
+              --uib-scale: 0.98;
+            }
+            .dot:nth-child(2),
+            .dot:nth-child(8) {
+              --uib-scale: 0.96;
+            }
+            .dot:nth-child(1),
+            .dot:nth-child(7) {
+              --uib-scale: 0.94;
+            }
+            .dot:nth-child(6),
+            .dot:nth-child(12) {
+              --uib-scale: 0.92;
+            }
+            .dot:nth-child(5),
+            .dot:nth-child(11) {
+              --uib-scale: 0.9;
+            }
+            .dot:nth-child(10),
+            .dot:nth-child(16) {
+              --uib-scale: 0.88;
+            }
+            .dot:nth-child(9),
+            .dot:nth-child(15) {
+              --uib-scale: 0.86;
+            }
+            .dot:nth-child(14) {
+              --uib-scale: 0.84;
+            }
+            .dot:nth-child(13) {
+              --uib-scale: 0.82;
+            }
+          </style>
+          
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <style>
+            ::-webkit-scrollbar {
+            background-color: transparent;
+            width: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ff5e55, #49ff88);
+            border-radius: 100px;
+            }
+  </style>
+
+
+
+
+
 
 
 
@@ -61,7 +339,7 @@
             pointer-events: none;
             transition: transform 0.1s linear;
             box-shadow: 0 0 10px red;
-            z-index: 9999; /* Makes sure it's always on top */
+            z-index: 10000;
         }
 
         body {
@@ -71,6 +349,7 @@
             color: white;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            cursor: none; /* Nasconde il cursore di sistema */
         }
     </style>
 </head>
@@ -82,7 +361,6 @@
         // Custom Cursor Logic
         const cursor = document.getElementById("cursor");
 
-        // Update cursor position on mouse move
         document.addEventListener("mousemove", (e) => {
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
@@ -91,14 +369,11 @@
         // RGB Border Animation
         let hue = 0;
         setInterval(() => {
-            hue = (hue + 1) % 360; // Cycle through 360 degrees of color
+            hue = (hue + 1) % 360;
             cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
             cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
         }, 30);
     </script>
-</body>
-</html>
-
 </body>
 </html>
 
@@ -385,7 +660,10 @@
   <nav class="sidebar">
 
     <div class="sidebar-logo">
-      <img src="lemonlogo.png" alt="Lemon Logo">
+      <a href="index.html">
+        <img src="lemonlogo.png" alt="Lemon Logo">
+      </a>
+      
     </div>
     <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
     <ul>
@@ -438,119 +716,144 @@
   <title>Lemon+</title>
   <style>
     :root {
-      --popup-init-width: 320px;
-      --popup-init-height: 220px;
-      --popup-login-width: 480px;
-      --popup-login-height: 540px;
       --border-thickness: 10px;
+      --transition-fast: 0.5s ease;
+      --transition-entry: 1s ease;
+      --popup-padding: 20px;
     }
-
     body {
       margin: 0;
       font-family: system-ui, sans-serif;
+      overflow: hidden;
     }
-
     #popup {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      width: var(--popup-init-width);
-      height: var(--popup-init-height);
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%) scale(0);
       background: linear-gradient(45deg, #fff300, #ffe066);
       border: var(--border-thickness) solid;
       border-image: linear-gradient(90deg, red, green, blue, red) 1;
       border-radius: 16px;
+      box-sizing: content-box;
+      padding: var(--popup-padding);
       text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
       animation: yellowShift 6s infinite alternate ease-in-out,
                  borderShift 5s infinite linear;
-      transition: width 0.3s ease, height 0.3s ease;
+      transition:
+        transform var(--transition-entry),
+        width var(--transition-fast),
+        height var(--transition-fast);
       overflow: hidden;
       z-index: 999;
+      width: auto;
+      height: auto;
     }
-
     #popup.show {
-      display: block;
-      animation: popupZoom 0.25s ease-out forwards,
-                 yellowShift 6s infinite alternate ease-in-out,
-                 borderShift 5s infinite linear;
+      transform: translate(-50%, -50%) scale(1);
     }
-
-    #popup h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-      color: #222;
-    }
-
-    #popup p {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    #popup a {
+    #popup h2 { margin: 0 0 1rem; font-size: 1.8rem; color: #222; }
+    #popup p { font-size: 1.1rem; color: #333; margin-bottom: 1rem; }
+    #popup a, #popup button:not(.close-btn) {
       display: inline-block;
-      text-decoration: none;
       background-color: #fff;
       color: #222;
       padding: 0.6rem 1.2rem;
       border-radius: 8px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
       cursor: pointer;
+      border: none;
+      text-decoration: none;
     }
-
-    #popup a:hover {
+    #popup a:hover, #popup button:not(.close-btn):hover {
       background-color: #f5c518;
       color: #000;
     }
-
-    #iframeWrapper {
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      display: none;
-    }
-
-    #loginFrame {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
-    }
-
     .close-btn {
       position: absolute;
       top: 8px;
-      right: 12px;
+      right: 8px;
       font-size: 24px;
-      font-weight: bold;
       color: #000;
       background: none;
       border: none;
+      padding: 0;
+      line-height: 1;
       cursor: pointer;
-      z-index: 1000;
     }
+    .close-btn:focus { outline: none; }
 
-    .close-btn:hover {
+    /* Turtle Login inside popup */
+    .turtle-login {
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      background: linear-gradient(135deg, #000, #001a00);
+      color: #f0f0f0;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0,179,0,0.5);
+      padding: 1rem;
+    }
+    .turtle-login.active { display: flex; }
+    .turtle-login h2 { margin-bottom: 0.75rem; }
+    .turtle-login input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #111;
+      color: inherit;
+      outline: none;
+      transition: box-shadow var(--transition-fast);
+    }
+    .turtle-login input:focus { box-shadow: 0 0 8px #00b300; }
+    .turtle-login .buttons { display: flex; justify-content: space-between; margin-top: 0.5rem; }
+    .turtle-login .buttons button {
+      flex: 1;
+      margin: 0 0.25rem;
+      padding: 0.5rem;
+      border: 2px solid #00b300;
+      background: transparent;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .turtle-login .buttons button:hover { transform: scale(1.05); background: #00b300; color: #000; }
+    .signup-panel, .admin-panel {
+      display: none;
+      margin-top: 1rem;
+      background: rgba(0,0,0,0.9);
+      padding: 1rem;
+      border: 2px solid #00b300;
+      border-radius: 1rem;
+      max-height: 300px;
+      overflow-y: auto;
+      transition: max-height var(--transition-fast), opacity var(--transition-fast);
+      opacity: 0;
+    }
+    .signup-panel.active, .admin-panel.active {
+      display: block;
+      opacity: 1;
+      max-height: 500px;
+    }
+    .admin-list { list-style: none; padding: 0; margin: 0; }
+    .admin-list li { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .admin-list button {
+      border: 1px solid red;
+      background: transparent;
       color: red;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast);
     }
-
-    @keyframes popupZoom {
-      to {
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
+    .admin-list button:hover { background: red; color: #000; }
 
     @keyframes yellowShift {
       0%   { background: linear-gradient(45deg, #fff300, #ffe066); }
       50%  { background: linear-gradient(45deg, #fff700, #ffeb99); }
       100% { background: linear-gradient(45deg, #ffee00, #fff3b0); }
     }
-
     @keyframes borderShift {
       0%   { border-image: linear-gradient(90deg, red, green, blue, red) 1; }
       25%  { border-image: linear-gradient(90deg, green, blue, red, green) 1; }
@@ -562,55 +865,135 @@
 </head>
 <body>
 
-<!-- Popup -->
 <div id="popup">
-  <button class="close-btn" id="closeBtn">&times;</button>
-  <div id="content">
+  <button class="close-btn" onclick="closePopup()">×</button>
+  <div id="initialContent">
     <h2>Lemon+</h2>
     <p>Login or Sign up! IT'S FREE!</p>
-    <a id="loginBtn">Go to Login</a>
+    <a id="goLoginBtn">Go to Login</a>
   </div>
-  <div id="iframeWrapper">
-    <iframe id="loginFrame" src=""></iframe>
+  <div id="turtleLogin" class="turtle-login">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <h2>Turtle Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <input type="text" id="ttaCode" placeholder="TTA Code">
+    <div class="buttons">
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn">Sign Up</button>
+    </div>
+    <div class="signup-panel" id="signupPanel">
+      <button class="close-btn" id="closeSignupBtn">×</button>
+      <h3>Turtle Sign Up</h3>
+      <input type="text" id="newUser" placeholder="Username">
+      <input type="password" id="newPass" placeholder="Password">
+      <div class="buttons">
+        <button id="saveBtn">Save</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+    <div class="admin-panel" id="adminPanel">
+      <button class="close-btn" id="closeAdminBtn">×</button>
+      <h3>All Accounts</h3>
+      <ul class="admin-list" id="adminList"></ul>
+    </div>
   </div>
 </div>
 
 <script>
-  const popup = document.getElementById('popup')
-  const loginBtn = document.getElementById('loginBtn')
-  const content = document.getElementById('content')
-  const iframeWrapper = document.getElementById('iframeWrapper')
-  const iframe = document.getElementById('loginFrame')
-  const closeBtn = document.getElementById('closeBtn')
+// Apri popup dopo 2s con animazione di entrata
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('popup').classList.add('show'), 1000);
+});
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
+}
 
-  const showPopup = () => popup.classList.add('show')
+const popup = document.getElementById('popup');
+const goLogin = document.getElementById('goLoginBtn');
+const initial = document.getElementById('initialContent');
+const turtle = document.getElementById('turtleLogin');
 
-  const hidePopup = () => {
-    popup.classList.remove('show')
-    content.style.display = 'block'
-    iframeWrapper.style.display = 'none'
-    iframe.src = ''
-    popup.style.width = 'var(--popup-init-width)'
-    popup.style.height = 'var(--popup-init-height)'
+// Ridimensiona popup al contenuto attivo
+function resizePopup() {
+  const content = initial.style.display !== 'none' ? initial : turtle;
+  const rect = content.getBoundingClientRect();
+  const pad = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--popup-padding'));
+  popup.style.width = rect.width + pad*2 + 'px';
+  popup.style.height = rect.height + pad*2 + 'px';
+}
+
+// Swap a turtle login e resize animato
+goLogin.addEventListener('click', () => {
+  initial.style.display = 'none';
+  turtle.classList.add('active');
+  resizePopup();
+});
+
+// Observer per animare resize al mutare del DOM
+const observer = new MutationObserver(resizePopup);
+observer.observe(turtle, { childList: true, subtree: true, attributes: true });
+
+// Logica login/signup/admin
+let users = JSON.parse(localStorage.getItem('turtleUsers') || '[]');
+const signupBtn = document.getElementById('signupBtn');
+const signupPanel = document.getElementById('signupPanel');
+const closeSignup = document.getElementById('closeSignupBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const saveBtn = document.getElementById('saveBtn');
+const loginBtnEl = document.getElementById('loginBtn');
+const closeAdmin = document.getElementById('closeAdminBtn');
+const adminPanel = document.getElementById('adminPanel');
+const adminList = document.getElementById('adminList');
+
+signupBtn.addEventListener('click', () => signupPanel.classList.add('active'));
+closeSignup.addEventListener('click', () => signupPanel.classList.remove('active'));
+cancelBtn.addEventListener('click', () => signupPanel.classList.remove('active'));
+saveBtn.addEventListener('click', () => {
+  const u = document.getElementById('newUser').value.trim();
+  const p = document.getElementById('newPass').value;
+  if (!u || !p) return alert('Enter both fields');
+  if (users.find(x => x.username===u)) return alert('Username exists');
+  users.push({username:u,password:p});
+  localStorage.setItem('turtleUsers', JSON.stringify(users));
+  signupPanel.classList.remove('active');
+});
+
+closeAdmin.addEventListener('click', () => adminPanel.classList.remove('active'));
+loginBtnEl.addEventListener('click', () => {
+  const u = document.getElementById('loginUser').value.trim();
+  const p = document.getElementById('loginPass').value;
+  const code = document.getElementById('ttaCode').value.trim();
+  if (code==='tta-3-21-12') { renderAdmin(); adminPanel.classList.add('active'); resizePopup(); return; }
+  if (users.find(x=>x.username===u&&x.password===p)) window.location.href='lemon+members.html';
+  else alert('Invalid credentials');
+});
+
+function renderAdmin() {
+  adminList.innerHTML = '';
+  users.forEach((usr,i) => {
+    const li = document.createElement('li');
+    li.textContent = `${usr.username} (${usr.password})`;
+    const btn = document.createElement('button');
+    btn.textContent = 'Ban';
+    btn.addEventListener('click', () => ban(i));
+    li.appendChild(btn);
+    adminList.appendChild(li);
+  });
+  resizePopup();
+}
+function ban(i) {
+  if (confirm(`Ban ${users[i].username}?`)) {
+    users.splice(i, 1);
+    localStorage.setItem('turtleUsers', JSON.stringify(users));
+    renderAdmin();
   }
-
-  loginBtn.addEventListener('click', () => {
-    content.style.display = 'none'
-    iframeWrapper.style.display = 'block'
-    iframe.src = 'https://www.authpro.com/auth/ElimayLmn/'
-    popup.style.width = 'var(--popup-login-width)'
-    popup.style.height = 'var(--popup-login-height)'
-  })
-
-  closeBtn.addEventListener('click', hidePopup)
-
-  window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(showPopup, 1000)
-  })
+}
 </script>
-
 </body>
 </html>
+
+
 
 
 

@@ -27,61 +27,62 @@
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Cursor</title>
-    <style>
-        /* Custom Cursor */
-        .custom-cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border-radius: 50%;
-            border: 3px solid red; /* Initial color */
-            pointer-events: none;
-            transition: transform 0.1s linear;
-            box-shadow: 0 0 10px red;
-            z-index: 9999; /* Makes sure it's always on top */
-        }
-
-        body {
-            margin: 0;
-            height: 100vh;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="cursor"></div>
-
-    <script>
-        // Custom Cursor Logic
-        const cursor = document.getElementById("cursor");
-
-        // Update cursor position on mouse move
-        document.addEventListener("mousemove", (e) => {
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-        });
-
-        // RGB Border Animation
-        let hue = 0;
-        setInterval(() => {
-            hue = (hue + 1) % 360; // Cycle through 360 degrees of color
-            cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
-            cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
-        }, 30);
-    </script>
-</body>
-</html>
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Custom Cursor</title>
+              <style>
+                  /* Custom Cursor */
+                  .custom-cursor {
+                      position: fixed;
+                      width: 10px;
+                      height: 10px;
+                      background-color: white;
+                      border-radius: 50%;
+                      border: 3px solid red; /* Initial color */
+                      pointer-events: none;
+                      transition: transform 0.1s linear;
+                      box-shadow: 0 0 10px red;
+                      z-index: 10000;
+                  }
+          
+                  body {
+                      margin: 0;
+                      height: 100vh;
+                      background-color: black;
+                      color: white;
+                      font-family: Arial, sans-serif;
+                      overflow: hidden;
+                      cursor: none; /* Nasconde il cursore di sistema */
+                  }
+              </style>
+          </head>
+          <body>
+              <!-- Custom Cursor -->
+              <div class="custom-cursor" id="cursor"></div>
+          
+              <script>
+                  // Custom Cursor Logic
+                  const cursor = document.getElementById("cursor");
+          
+                  document.addEventListener("mousemove", (e) => {
+                      cursor.style.left = `${e.clientX}px`;
+                      cursor.style.top = `${e.clientY}px`;
+                  });
+          
+                  // RGB Border Animation
+                  let hue = 0;
+                  setInterval(() => {
+                      hue = (hue + 1) % 360;
+                      cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
+                      cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
+                  }, 30);
+              </script>
+          </body>
+          </html>
+          
 
 </body>
 </html>
@@ -364,7 +365,10 @@
   <nav class="sidebar">
 
     <div class="sidebar-logo">
-      <img src="lemonlogo.png" alt="Lemon Logo">
+      <a href="index.html">
+        <img src="lemonlogo.png" alt="Lemon Logo">
+      </a>
+      
     </div>
     <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
     <ul>
@@ -412,7 +416,7 @@
     }
     </style>
 
-<img src="Turtle-Tech Logo ().png" alt="Turtle Tech Logo" style="display: block; margin: auto; width: 100px; height: auto;">
+<img src="Turtle-Tech Logo ()tt .png" alt="Turtle Tech Logo" style="display: block; margin: auto; width: 100px; height: auto;">
 
     <br>    
     <div class="center-container">

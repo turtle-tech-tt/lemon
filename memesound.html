@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <link rel="icon" type="image/png" href="lemonlogo.png">
-            <title>The Lemonade Edition</title>
-            <link rel="stylesheet" href="style.css">
+    <html>
+        <head>
+          <script>
+            // Reindirizza a privacy.html se non è stata ancora accettata
+            if (!localStorage.getItem('privacyAccettata')) {
+              window.location.href = "privacy.html?redirect=index.html";
+            }
+          </script>
+          
+          <script>
+            // Se l'utente NON ha ancora accettato, reindirizza alla privacy
+            if (!localStorage.getItem('privacyAccettata')) {
+              window.location.href = "privacy.html";
+            }
+          </script>          
+            <link rel="icon" type="image/png" href="lemonlogo.png">
+            <title>Meme Sounds</title>
+        <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
         <script src="panic-key.js"></script>
           <script src="/path/to/panic-key.js"></script>
@@ -23,68 +36,8 @@
 
 
 
-          <style>
-            ::-webkit-scrollbar {
-            background-color: transparent;
-            width: 10px;
-            }
-            ::-webkit-scrollbar-thumb {
-            background: linear-gradient(#ff5e55, #49ff88);
-            border-radius: 100px;
-            }
-  </style>
 
-
-
-
-
-
-
-
-
-
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-
-
-
-
-
-
-
-
-
-
-
-
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -156,102 +109,99 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-        <style>
-            body {
-                background-color: black; /* Set background color to black */
-                margin: 0;
-                color: yellow; /* Default text color */
-                font-family: "Comic Sans MS", cursive, sans-serif;
-            }
-
-            .lemonade {
-                font-family: "Comic Sans MS", cursive, sans-serif;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center; /* Center horizontally */
-                position: absolute;
-                top: 20px; /* Position at the top */
-                left: 50%; /* Center horizontally */
-                transform: translateX(-50%); /* Adjust for centering */
-            }
-
-            .lemonade span {
-                font-size: 11px;
-                font-weight: bold;
-                display: inline-block;
-                background: linear-gradient(
-                    to left,
-                    #fff700,
-                    #ffeb3b,
-                    #ffd700,
-                    #f1c40f,
-                    #fff700
-                );
-                background-size: 400% auto;
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                animation: growFast 0.3s ease-out forwards, colorFlowFast 2s linear infinite;
-                animation-delay: calc(var(--i) * 0.05s), 0.3s;
-            }
-
-            .space {
-                width: 25px;
-            }
-
-            @keyframes growFast {
-                0% {
+          
+            
+            
+            
+            
+            
+            
+            
+            <style>
+                body {
+                    background-color: rgb(0, 0, 0); /* Set background color to black */
+                    margin: 0;
+                    color: yellow; /* Default text color */
+                    font-family: "Comic Sans MS", cursive, sans-serif;
+                }
+    
+                .lemonade {
+                    font-family: "Comic Sans MS", cursive, sans-serif;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center; /* Center horizontally */
+                    position: absolute;
+                    top: 20px; /* Position at the top */
+                    left: 50%; /* Center horizontally */
+                    transform: translateX(-50%); /* Adjust for centering */
+                }
+    
+                .lemonade span {
                     font-size: 11px;
-                    transform: scale(0.5);
-                    opacity: 0;
+                    font-weight: bold;
+                    display: inline-block;
+                    background: linear-gradient(
+                        to left,
+                        #fff700,
+                        #ffeb3b,
+                        #ffd700,
+                        #f1c40f,
+                        #fff700
+                    );
+                    background-size: 400% auto;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    animation: growFast 0.3s ease-out forwards, colorFlowFast 2s linear infinite;
+                    animation-delay: calc(var(--i) * 0.05s), 0.3s;
                 }
-                100% {
-                    font-size: 70px;
-                    transform: scale(1);
-                    opacity: 1;
+    
+                .space {
+                    width: 25px;
                 }
-            }
-
-            @keyframes colorFlowFast {
-                0% {
-                    background-position: 100% center;
+    
+                @keyframes growFast {
+                    0% {
+                        font-size: 11px;
+                        transform: scale(0.5);
+                        opacity: 0;
+                    }
+                    100% {
+                        font-size: 70px;
+                        transform: scale(1);
+                        opacity: 1;
+                    }
                 }
-                100% {
-                    background-position: 0% center;
+    
+                @keyframes colorFlowFast {
+                    0% {
+                        background-position: 100% center;
+                    }
+                    100% {
+                        background-position: 0% center;
+                    }
                 }
-            }
-        </style>
-    </head>
-    </head>
-        <!-- Animated Title -->
-        <div class="lemonade">
-            <span style="--i:0">A</span>
-            <span style="--i:1">b</span>
-            <span style="--i:2">o</span>
-            <span style="--i:2">u</span>
-            <span style="--i:2">t</span>
-
-            <span class="space"></span>
-
-            <span style="--i:3">L</span>
-            <span style="--i:4">e</span>
-            <span style="--i:5">m</span>
-            <span style="--i:6">o</span>
-            <span style="--i:7">n</span>
-            <span style="--i:8">s</span>
-        </div>
-
-
+            </style>
+        </head>
+        </head>
+            <!-- Animated Title -->
+            <div class="lemonade">
+                <span style="--i:0">M</span>
+                <span style="--i:1">e</span>
+                <span style="--i:2">m</span>
+                <span style="--i:2">e</span>
+    
+                <span class="space"></span>
+    
+                <span style="--i:3">S</span>
+                <span style="--i:4">o</span>
+                <span style="--i:5">u</span>
+                <span style="--i:6">n</span>
+                <span style="--i:7">d</span>
+                <span style="--i:8">s</span>
+            </div>
+        </head>
+    </html>
 
 
 
@@ -261,42 +211,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -472,53 +387,8 @@
        class="sidebar-footer" target="_blank">© Turtle Tech</a>
   </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <style>
-    .donate-button:hover img {
-      transform: scale(1.05);
-      transition: transform 0.2s ease-in-out;
-    }
-  
-    .donate-button img {
-      transition: transform 0.2s ease-in-out;
-    }
-  </style>
-  
-  <div class="donate-button" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-    <a href="https://www.buymeacoffee.com/turtle.tech">
-      <img src="https://img.buymeacoffee.com/button-api/?text=Donate to Turtle Tech&emoji=🐢&slug=turtle.tech&button_colour=40DCA5&font_colour=ffffff&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00" />
-    </a>
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="turtle.tech" data-description="Support me on Buy me a coffee!" data-message="Please Donate! <3" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-  
+</body>
+</html>
 
 
 
@@ -536,11 +406,31 @@
 
 
 
-  <!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Logo Turtle Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finestra con Full Screen Animato</title>
   <style>
     body {
       margin: 0;
@@ -548,57 +438,152 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #000000;
-      font-family: Arial, sans-serif;
+      background-color: #121212;
     }
 
-    .image-container {
-      position: relative;
-      width: 500px;
-      height: auto;
-      cursor: pointer;
+    .finestra {
+      width: 50%;
+      height: 600px;
+      background-color: black;
+      border: 2px solid yellow;
+      border-radius: 30px;
+      overflow: hidden;
     }
 
-    .image-container img {
+    .finestra iframe {
       width: 100%;
-      height: auto;
-      display: block;
-      transition: filter 0.3s ease;
+      height: 100%;
+      border: none;
+      border-radius: 30px;
     }
 
-    .image-container:hover img {
-      filter: blur(4px);
-    }
-
-    .overlay-text {
-      font-family: Comic Sans MS;
+    .button-container {
       position: absolute;
-      top: 50%;
+      bottom: 20px;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: #000;
-      font-size: 25px;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
+      transform: translateX(-50%);
     }
 
-    .image-container:hover .overlay-text {
-      opacity: 1;
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      background-color: yellow;
+      color: black;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+      background-color: gold;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    button:active {
+      transform: scale(1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body>
-  <a href="aboutturtletech.html">
-    <div class="image-container">
-      <img src="Turtle-Tech Logo ()tt .png" alt="Turtle Tech Logo">
-      <div class="overlay-text">About Turtle Tech</div>
-    </div>
-  </a>
+
+  <div class="finestra" id="finestra">
+    <iframe src="https://seraph.reveriestudios.online/apps/thirtydollarwebsite/index.html"></iframe>
+  </div>
+
+  <div class="button-container">
+    <button onclick="schermoIntero()">Full Screen</button>
+  </div>
+
+  <script>
+    function schermoIntero() {
+      const finestra = document.getElementById("finestra");
+      if (finestra.requestFullscreen) {
+        finestra.requestFullscreen();
+      } else if (finestra.webkitRequestFullscreen) { // Safari
+        finestra.webkitRequestFullscreen();
+      } else if (finestra.msRequestFullscreen) { // IE11
+        finestra.msRequestFullscreen();
+      }
+    }
+  </script>
+
 </body>
 </html>
 
 
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottone Back</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: flex-end; /* Posiziona il contenuto a destra */
+      align-items: flex-end; /* Posiziona il contenuto in basso */
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+    }
+
+    .bottone-giallo {
+      background-color: #ffeb3b;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: absolute;
+      bottom: 20px; /* Distanza dal fondo */
+      right: 20px; /* Posiziona il bottone a destra */
+    }
+
+    .bottone-giallo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button class="bottone-giallo" onclick="window.location.href='special.html'">
+      Back
+    </button>
+  </div>
+</body>
+</html>

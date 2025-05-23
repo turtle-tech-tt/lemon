@@ -236,7 +236,7 @@
             pointer-events: none;
             transition: transform 0.1s linear;
             box-shadow: 0 0 10px red;
-            z-index: 9999; /* Makes sure it's always on top */
+            z-index: 10000;
         }
 
         body {
@@ -246,6 +246,7 @@
             color: white;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            cursor: none; /* Nasconde il cursore di sistema */
         }
     </style>
 </head>
@@ -257,7 +258,6 @@
         // Custom Cursor Logic
         const cursor = document.getElementById("cursor");
 
-        // Update cursor position on mouse move
         document.addEventListener("mousemove", (e) => {
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
@@ -266,7 +266,7 @@
         // RGB Border Animation
         let hue = 0;
         setInterval(() => {
-            hue = (hue + 1) % 360; // Cycle through 360 degrees of color
+            hue = (hue + 1) % 360;
             cursor.style.borderColor = `hsl(${hue}, 100%, 50%)`;
             cursor.style.boxShadow = `0 0 10px hsl(${hue}, 100%, 50%)`;
         }, 30);
@@ -475,7 +475,10 @@
   <nav class="sidebar">
 
     <div class="sidebar-logo">
-      <img src="lemonlogo.png" alt="Lemon Logo">
+      <a href="index.html">
+        <img src="lemonlogo.png" alt="Lemon Logo">
+      </a>
+      
     </div>
     <div class="sidebar-title">🍋 Lemon Menu 🍋</div>
     <ul>
