@@ -13,7 +13,32 @@
 
 
 
-
+        <head>
+          <title>Lemon - Turtle Tech</title>
+          <link id="favicon-tag" rel="icon" href="assets/default-favicon.ico" type="image/x-icon" />
+        
+          <script>
+            (function() {
+              const customTitle = localStorage.getItem('tabCloakTitle');
+              const customFavicon = localStorage.getItem('tabCloakFavicon');
+        
+              if (customTitle) {
+                document.title = customTitle;
+              }
+              if (customFavicon) {
+                let linkTag = document.getElementById('favicon-tag');
+                if (!linkTag) {
+                  linkTag = document.createElement('link');
+                  linkTag.id = 'favicon-tag';
+                  linkTag.rel = 'icon';
+                  linkTag.type = 'image/x-icon';
+                  document.head.appendChild(linkTag);
+                }
+                linkTag.href = customFavicon;
+              }
+            })();
+          </script>
+        </head>
 
 
 
@@ -692,67 +717,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Panic Key System</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings UI</title>
+  <!-- Default favicon (will be overridden by Tab Cloak if set) -->
+  <link id="favicon-tag" rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
+    /* ======================
+       GLOBAL & LAYOUT STYLES
+       ====================== */
+    * {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
-
-    #setPanicKeyBtn {
-      background-color: black;
-      border: 2px solid yellow;
-      color: white;
-      padding: 15px 30px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .container {
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .section {
+      width: 100%;
+      border: 2px solid #ffdc3f;
       border-radius: 8px;
+      padding: 20px;
+      background: #1e1e1e;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .section h2 {
+      margin: 0 0 15px;
+      font-size: 24px;
+      text-align: center;
+      color: #ffffff;
     }
 
-    #setPanicKeyBtn:hover {
+    /* ======================
+       TAB CLOAK STYLES
+       ====================== */
+    .tab-cloak-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-cloak-inputs input[type="text"] {
+      padding: 10px;
+      border: 2px solid #ffdc3f;
+      background: #000000;
+      color: white;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 200px;
+      text-align: center;
+    }
+    .tab-cloak-inputs button {
+      padding: 10px 20px;
+      background: #ffdc3f;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .tab-cloak-inputs button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 10px yellow;
+      box-shadow: 0 0 10px rgba(255, 220, 63, 0.6);
+    }
+    .icon-options {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .icon-options img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .icon-options img:hover {
+      transform: scale(1.1);
+      border-color: #ffdc3f;
+    }
+
+    /* ======================
+       PANIC KEY STYLES
+       ====================== */
+    .panic-key-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .panic-key-container button {
+      padding: 10px 20px;
+      background: #ffdc3f;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .panic-key-container button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 220, 63, 0.6);
+    }
+    .info-text {
+      font-size: 14px;
+      color: #cccccc;
+      text-align: center;
+    }
+    #currentKeyText {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    /* ======================
+       ANTI CLOSE & FPS COUNTER STYLES
+       ====================== */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #ffdc3f;
+      cursor: pointer;
+    }
+
+    /* FPS Counter display */
+    #fpsDisplay {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffdc3f;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 14px;
+      z-index: 9999;
+      display: none;
     }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <button id="setPanicKeyBtn">Set Panic Key</button>
+    <!-- TAB CLOAK SECTION -->
+    <div class="section" id="tabCloakSection">
+      <h2>Tab Cloak</h2>
+      <div class="tab-cloak-inputs">
+        <input type="text" id="customTitle" placeholder="Enter Custom Title" />
+        <input type="text" id="customImage" placeholder="Enter Custom Image URL" />
+        <button id="saveTabCloakBtn">SAVE CHANGES</button>
+      </div>
+      <div class="icon-options">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYWy6tLxBPdE65jokTz4cBuyyNGDkupZVdtg&s"
+             data-name="Canvas"
+             data-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYWy6tLxBPdE65jokTz4cBuyyNGDkupZVdtg&s"
+             alt="Canvas Preset" />
+        <img src="https://static.dezeen.com/uploads/2025/05/sq-google-g-logo-update_dezeen_2364_col_0-852x852.jpg"
+             data-name="Google"
+             data-logo="https://static.dezeen.com/uploads/2025/05/sq-google-g-logo-update_dezeen_2364_col_0-852x852.jpg"
+             alt="Google Preset" />
+        <img src="https://play-lh.googleusercontent.com/ujsa1M8GdT-fo-GfPazpUwgPXVWEOWKUgKZk-SdnUhmcL3opS24MiHe6ypEgqxGpllw"
+             data-name="ClassLink"
+             data-logo="https://play-lh.googleusercontent.com/ujsa1M8GdT-fo-GfPazpUwgPXVWEOWKUgKZk-SdnUhmcL3opS24MiHe6ypEgqxGpllw"
+             alt="ClassLink Preset" />
+        <img src="https://turtle-tech-tt.github.io/lemon/lemonlogo.png"
+             data-name="The Lemonade Edition"
+             data-logo="https://turtle-tech-tt.github.io/lemon/lemonlogo.png"
+             alt="The Lemonade Edition Preset" />
+      </div>
+    </div>
+
+    <!-- PANIC KEY SECTION -->
+    <div class="section" id="panicKeySection">
+      <h2>Panic Key</h2>
+      <div class="panic-key-container">
+        <button id="setPanicKeyBtn">SET PANIC KEY</button>
+        <div id="currentKeyText">Current panic key: [</div>
+        <div class="info-text">DO NOT SET THE PANIC KEY TO SOMETHING YOU USE OFTEN.</div>
+      </div>
+    </div>
+
+    <!-- ANTI CLOSE SECTION -->
+    <div class="section" id="antiCloseSection">
+      <h2>Anti Close</h2>
+      <label class="checkbox-label">
+        <input type="checkbox" id="antiCloseCheckbox" />
+        <span>Enable anti tab close (stops anyone from closing your tab)</span>
+      </label>
+    </div>
+
+    <!-- FPS COUNTER SECTION -->
+    <div class="section" id="fpsCounterSection">
+      <h2>FPS Counter</h2>
+      <label class="checkbox-label">
+        <input type="checkbox" id="fpsCounterCheckbox" />
+        <span>Enable FPS counter</span>
+      </label>
+    </div>
+
+  </div>
+
+  <!-- FPS Display element (initially hidden) -->
+  <div id="fpsDisplay">FPS: 0</div>
 
   <script>
-    let panicKey = "[";
-    let panicActive = false;
+    /* =====================
+       TAB CLOAK FUNCTIONALITY
+       ===================== */
+    const saveTabCloakBtn = document.getElementById('saveTabCloakBtn');
+    const customTitleInput = document.getElementById('customTitle');
+    const customImageInput = document.getElementById('customImage');
+    const iconImages = document.querySelectorAll('.icon-options img');
 
-    const setPanicKeyBtn = document.getElementById("setPanicKeyBtn");
+    // On page load, populate inputs & preview from localStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTitle = localStorage.getItem('tabCloakTitle');
+      const savedFavicon = localStorage.getItem('tabCloakFavicon');
 
-    setPanicKeyBtn.addEventListener("click", () => {
-      panicActive = true;
-      alert(`Panic key is now set to "${panicKey}".\nPress "${panicKey}" at any time to immediately redirect to Google.com.\nTo change the panic key, click "Set Panic Key" again.`);
-      
-      const newKey = prompt("Enter a new panic key (just one character):", panicKey);
-      if (newKey && newKey.length === 1) {
-        panicKey = newKey;
-        alert(`Panic key updated to "${panicKey}".`);
-      } else if (newKey !== null) {
-        alert("Invalid key. Panic key was not changed.");
+      if (savedTitle) {
+        customTitleInput.value = savedTitle;
+        document.title = savedTitle;
+      }
+      if (savedFavicon) {
+        customImageInput.value = savedFavicon;
+        _applyFavicon(savedFavicon);
       }
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (panicActive && event.key === panicKey) {
+    // Save Tab Cloak settings
+    saveTabCloakBtn.addEventListener('click', () => {
+      const newTitle = customTitleInput.value.trim();
+      const newFavicon = customImageInput.value.trim();
+
+      if (newTitle) {
+        localStorage.setItem('tabCloakTitle', newTitle);
+        document.title = newTitle;
+      } else {
+        localStorage.removeItem('tabCloakTitle');
+      }
+
+      if (newFavicon) {
+        localStorage.setItem('tabCloakFavicon', newFavicon);
+        _applyFavicon(newFavicon);
+      } else {
+        localStorage.removeItem('tabCloakFavicon');
+        _applyFavicon('favicon.ico'); // fallback
+      }
+
+      alert('Tab Cloak settings applied!');
+    });
+
+    // When preset icons are clicked, fill inputs and preview
+    iconImages.forEach(img => {
+      img.addEventListener('click', () => {
+        const name = img.getAttribute('data-name');
+        const logoUrl = img.getAttribute('data-logo');
+        customTitleInput.value = name;
+        customImageInput.value = logoUrl;
+      });
+    });
+
+    // Helper: apply favicon with cache-busting
+    function _applyFavicon(url) {
+      let linkTag = document.getElementById('favicon-tag');
+      if (!linkTag) {
+        linkTag = document.createElement('link');
+        linkTag.id = 'favicon-tag';
+        linkTag.rel = 'icon';
+        linkTag.type = 'image/x-icon';
+        document.head.appendChild(linkTag);
+      }
+      linkTag.href = url + '?v=' + Date.now();
+    }
+
+
+    /* =====================
+       PANIC KEY FUNCTIONALITY
+       ===================== */
+    let panicKey = localStorage.getItem('panicKey') || '[';
+    const setPanicKeyBtn = document.getElementById('setPanicKeyBtn');
+    const currentKeyText = document.getElementById('currentKeyText');
+
+    // Initialize displayed panic key
+    function _updateCurrentKeyText() {
+      currentKeyText.textContent = `Current panic key: ${panicKey}`;
+    }
+    _updateCurrentKeyText();
+
+    // On clicking "SET PANIC KEY": prompt user for a new key
+    setPanicKeyBtn.addEventListener('click', () => {
+      alert(
+        `Panic Key is currently set to "${panicKey}".\n` +
+        `Press that key anywhere on the site to immediately redirect to Google.com.\n\n` +
+        `Click OK to change the panic key, or Cancel to keep "${panicKey}".`
+      );
+      const newKey = prompt("Enter a new panic key (single character):", panicKey);
+      if (newKey === null) {
+        return; // user pressed Cancel
+      }
+      if (newKey.length === 1) {
+        panicKey = newKey;
+        localStorage.setItem('panicKey', panicKey);
+        _updateCurrentKeyText();
+      } else {
+        alert("Invalid input. Panic key not changed.");
+      }
+    });
+
+    // Global listener for panic key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === panicKey) {
         window.location.href = "https://www.google.com";
       }
     });
-  </script>
 
+
+    /* =====================
+       ANTI CLOSE FUNCTIONALITY
+       ===================== */
+    const antiCloseCheckbox = document.getElementById('antiCloseCheckbox');
+    let _antiCloseHandler = null;
+
+    // Load saved anti-close state
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedAntiClose = localStorage.getItem('antiCloseEnabled') === 'true';
+      antiCloseCheckbox.checked = savedAntiClose;
+      if (savedAntiClose) _enableAntiClose();
+    });
+
+    // Toggle anti-close on checkbox change
+    antiCloseCheckbox.addEventListener('change', () => {
+      if (antiCloseCheckbox.checked) {
+        localStorage.setItem('antiCloseEnabled', 'true');
+        _enableAntiClose();
+      } else {
+        localStorage.removeItem('antiCloseEnabled');
+        _disableAntiClose();
+      }
+    });
+
+    function _enableAntiClose() {
+      if (_antiCloseHandler) return;
+      _antiCloseHandler = function(e) {
+        e.preventDefault();
+        e.returnValue = ''; // modern browsers show a default warning
+      };
+      window.addEventListener('beforeunload', _antiCloseHandler);
+    }
+    function _disableAntiClose() {
+      if (!_antiCloseHandler) return;
+      window.removeEventListener('beforeunload', _antiCloseHandler);
+      _antiCloseHandler = null;
+    }
+
+
+    /* =====================
+       FPS COUNTER FUNCTIONALITY
+       ===================== */
+    const fpsCounterCheckbox = document.getElementById('fpsCounterCheckbox');
+    const fpsDisplay = document.getElementById('fpsDisplay');
+    let _fpsInterval = null;
+    let _lastTime = performance.now();
+    let _frameCount = 0;
+
+    // Load saved FPS counter state
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedFPS = localStorage.getItem('fpsCounterEnabled') === 'true';
+      fpsCounterCheckbox.checked = savedFPS;
+      if (savedFPS) _startFPSCounter();
+    });
+
+    // Toggle FPS counter on checkbox change
+    fpsCounterCheckbox.addEventListener('change', () => {
+      if (fpsCounterCheckbox.checked) {
+        localStorage.setItem('fpsCounterEnabled', 'true');
+        _startFPSCounter();
+      } else {
+        localStorage.removeItem('fpsCounterEnabled');
+        _stopFPSCounter();
+      }
+    });
+
+    function _startFPSCounter() {
+      fpsDisplay.style.display = 'block';
+      _lastTime = performance.now();
+      _frameCount = 0;
+      _fpsInterval = setInterval(() => {
+        const now = performance.now();
+        const delta = now - _lastTime;
+        const fps = Math.round((_frameCount / delta) * 1000);
+        fpsDisplay.textContent = `FPS: ${fps}`;
+        _lastTime = now;
+        _frameCount = 0;
+      }, 1000);
+
+      // Animation frame loop
+      function tick() {
+        _frameCount++;
+        if (fpsCounterCheckbox.checked) {
+          requestAnimationFrame(tick);
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function _stopFPSCounter() {
+      fpsDisplay.style.display = 'none';
+      clearInterval(_fpsInterval);
+      _fpsInterval = null;
+    }
+  </script>
 </body>
 </html>
 
@@ -771,14 +1175,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  

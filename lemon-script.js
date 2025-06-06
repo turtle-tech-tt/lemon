@@ -10,3 +10,28 @@ document.addEventListener('keydown', (e) => {
     sidebar.classList.remove('active');
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+// Check if the browser supports service workers
+if ('serviceWorker' in navigator) {
+  // Register the service worker after the window has loaded
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered:', registration);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+}

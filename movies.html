@@ -19,6 +19,43 @@
 
 
 
+        <head>
+          <title>Lemon - Turtle Tech</title>
+          <link id="favicon-tag" rel="icon" href="assets/default-favicon.ico" type="image/x-icon" />
+        
+          <script>
+            (function() {
+              const customTitle = localStorage.getItem('tabCloakTitle');
+              const customFavicon = localStorage.getItem('tabCloakFavicon');
+        
+              if (customTitle) {
+                document.title = customTitle;
+              }
+              if (customFavicon) {
+                let linkTag = document.getElementById('favicon-tag');
+                if (!linkTag) {
+                  linkTag = document.createElement('link');
+                  linkTag.id = 'favicon-tag';
+                  linkTag.rel = 'icon';
+                  linkTag.type = 'image/x-icon';
+                  document.head.appendChild(linkTag);
+                }
+                linkTag.href = customFavicon;
+              }
+            })();
+          </script>
+        </head>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

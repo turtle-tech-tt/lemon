@@ -14,7 +14,32 @@
 
 
 
-
+              <head>
+                <title>Lemon - Turtle Tech</title>
+                <link id="favicon-tag" rel="icon" href="assets/default-favicon.ico" type="image/x-icon" />
+              
+                <script>
+                  (function() {
+                    const customTitle = localStorage.getItem('tabCloakTitle');
+                    const customFavicon = localStorage.getItem('tabCloakFavicon');
+              
+                    if (customTitle) {
+                      document.title = customTitle;
+                    }
+                    if (customFavicon) {
+                      let linkTag = document.getElementById('favicon-tag');
+                      if (!linkTag) {
+                        linkTag = document.createElement('link');
+                        linkTag.id = 'favicon-tag';
+                        linkTag.rel = 'icon';
+                        linkTag.type = 'image/x-icon';
+                        document.head.appendChild(linkTag);
+                      }
+                      linkTag.href = customFavicon;
+                    }
+                  })();
+                </script>
+              </head>
 
 
 
@@ -529,7 +554,7 @@
   <body>
     <div class="gallery">
       <div class="image-container">
-        <a href="https://www.esempio.com" target="_blank" style="display: block; position: relative;">
+        <a href="https://turtle-tech-tt.github.io/1v1lol/" target="_blank" style="display: block; position: relative;">
           <img src="https://pbs.twimg.com/profile_images/1219353297129295874/HDIEpfJr_400x400.jpg" alt="img1" />
           <div class="overlay-text">1v1.lol</div>
         </a>
